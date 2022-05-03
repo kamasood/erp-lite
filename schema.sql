@@ -30,7 +30,7 @@ CREATE TABLE customers (
   state VARCHAR,
   zip VARCHAR,
   phone VARCHAR,
-  "text_msg?" VARCHAR,
+  "text_msg?" BOOLEAN,
   created_date TIMESTAMP,
   updated_date TIMESTAMP,
   manager_id INTEGER,
