@@ -1,16 +1,35 @@
 import React from 'react';
+import { Outlet } from 'react-router-dom';
+import styled from 'styled-components';
+import Menu from './Menu.jsx';
+import Banner from './Banner.jsx';
+import Widget from './Widget.jsx';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
+const AppContainer = styled.div`
+  height: 100%;
+  width: 100%;
+  font-family: Roboto;
+`
 
-  }
+const Header = styled.header`
+  height: 150px;
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+  margin: 50px 5% 0 5%;
+`
 
-  render() {
-    return (
-      <h1>Hello World!</h1>
-    );
-  }
+export default function App () {
+  return (
+    <AppContainer>
+      <Header>
+        <Menu />
+        <Banner />
+        <Widget />
+      </Header>
+      <main>
+        <Outlet />
+      </main>
+    </AppContainer>
+  );
 }
-
-export default App;
