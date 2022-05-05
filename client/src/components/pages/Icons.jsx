@@ -3,9 +3,15 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Box = styled.button`
-  height: 300px;
-  width: 300px;
-  margin: 25px;
+  height: 350px;
+  width: 350px;
+  margin: 40px 60px;
+  border: 1px solid gray;
+  background: none;
+  box-shading: 1px 1px 2px gray;
+  &:hover {
+    background-color: #f2f3f4;
+  }
 `
 
 export default function Icons() {
@@ -15,9 +21,6 @@ export default function Icons() {
       <Link to="/production">
         <Box>Production</Box>
       </Link>
-      <Link to="/scheduling">
-        <Box>Scheduling</Box>
-      </Link>
       <Link to="/inventory">
         <Box>Inventory</Box>
       </Link>
@@ -26,6 +29,9 @@ export default function Icons() {
       </Link>
       <Link to="/employees">
         <Box>Employees</Box>
+      </Link>
+      <Link to="/scheduling">
+        <Box>Scheduling</Box>
       </Link>
       <Link to="/financials">
         <Box>Financials</Box>

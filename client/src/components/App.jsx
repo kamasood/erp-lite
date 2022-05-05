@@ -19,6 +19,9 @@ const Header = styled.header`
   margin: 50px 5% 0 5%;
 `
 
+const IconsContainer = styled.main`
+`
+
 export default function App () {
   return (
     <AppContainer>
@@ -27,9 +30,9 @@ export default function App () {
         <Banner />
         <Widget />
       </Header>
-      <main>
+      <IconsContainer>
         <Outlet />
-      </main>
+      </IconsContainer>
     </AppContainer>
   );
 }

@@ -1,0 +1,16 @@
+id,description,default_rate,department_id
+110,"General Labor",175,1
+190,"Management Labor",210,1
+210,"Assembly",175,2
+230,"Programming",210,2
+310,"Wiring",175,3
+350,"Soldering",175,3
+410,"Printing",175,4
+420,"Molding",175,4
+510,"Machining",210,5
+570,"Routing",210,5
+610,"Etching",175,6
+630,"Cleaning",175,6
+710,"Priming",175,7
+720,"Coating",175,7
+888,"Quality Check",115,8

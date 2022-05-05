@@ -1,9 +1,12 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import styled from 'styled-components';
+import Home from './Home.jsx';
 
 const Header = styled.header`
-  height: 100px;
+  height: 40px;
+  display: flex;
+  align-items: center;
 `
 
 const Tab = styled.button`
@@ -31,11 +34,8 @@ export default function Scheduling() {
   return (
     <>
       <Header>
-        <Link to="/">
-          <button>Back</button>
-        </Link>
-        <h1>Scheduling</h1>
-        <button>Settings</button>
+        <Home />
+        <span style={{ fontWeight: "bold", fontSize: "25px" }}>    Scheduling</span>
       </Header>
       <nav>
         <Link to="calendars">

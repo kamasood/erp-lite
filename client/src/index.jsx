@@ -16,7 +16,9 @@ import Customers from './components/pages/Customers.jsx';
 import Employees from './components/pages/Employees.jsx';
 import Financials from './components/pages/Financials.jsx';
 import WorkOrders from './components/pages/production/WorkOrders.jsx';
+import WorkOrder from './components/pages/production/WorkOrder.jsx';
 import Workstations from './components/pages/production/Workstations.jsx';
+import Workstation from './components/pages/production/Workstation.jsx';
 import Maintenance from './components/pages/production/Maintenance.jsx';
 import ProductionAnalysis from './components/pages/production/ProductionAnalysis.jsx';
 import Calendars from './components/pages/scheduling/Calendars.jsx';
@@ -24,14 +26,18 @@ import Events from './components/pages/scheduling/Events.jsx';
 import Queue from './components/pages/scheduling/Queue.jsx';
 import History from './components/pages/scheduling/History.jsx';
 import Parts from './components/pages/inventory/Parts.jsx';
+import Part from './components/pages/inventory/Part.jsx';
 import Kits from './components/pages/inventory/Kits.jsx';
 import Purchasing from './components/pages/inventory/Purchasing.jsx';
 import Receiving from './components/pages/inventory/Receiving.jsx';
 import CustomerDetails from './components/pages/customers/CustomerDetails.jsx';
+import Customer from './components/pages/customers/Customer.jsx';
 import Assets from './components/pages/customers/Assets.jsx';
+import Asset from './components/pages/customers/Asset.jsx';
 import Reminders from './components/pages/customers/Reminders.jsx';
 import CustomerReports from './components/pages/customers/CustomerReports.jsx';
 import EmployeeDetails from './components/pages/employees/EmployeeDetails.jsx';
+import Employee from './components/pages/employees/Employee.jsx';
 import Development from './components/pages/employees/Development.jsx';
 import Benefits from './components/pages/employees/Benefits.jsx';
 import Communication from './components/pages/employees/Communication.jsx';
@@ -48,9 +54,12 @@ root.render(
       <Route path="/" element={<App />}>
         <Route path="" element={<Icons />} />
         <Route path="production" element={<Production />}>
-          <Route path="" element={<WorkOrders />} />
-          <Route path="workorders" element={<WorkOrders />} />
-          <Route path="workstations" element={<Workstations />} />
+          <Route path="" element={<WorkOrders />}>
+            <Route path=":woId" element={<WorkOrder />} />
+          </Route>
+          <Route path="workstations" element={<Workstations />}>
+            <Route path=":wsId" element={<Workstation />} />
+          </Route>
           <Route path="maintenance" element={<Maintenance />} />
           <Route path="analysis" element={<ProductionAnalysis />} />
         </Route>
@@ -62,22 +71,27 @@ root.render(
           <Route path="history" element={<History />} />
         </Route>
         <Route path="inventory" element={<Inventory />}>
-          <Route path="" element={<Parts />} />
-          <Route path="parts" element={<Parts />} />
+          <Route path="" element={<Parts />}>
+            <Route path=":partId" element={<Part />} />
+          </Route>
           <Route path="kits" element={<Kits />} />
           <Route path="purchasing" element={<Purchasing />} />
           <Route path="receiving" element={<Receiving />} />
         </Route>
         <Route path="customers" element={<Customers />}>
-          <Route path="" element={<CustomerDetails />} />
-          <Route path="details" element={<CustomerDetails />} />
-          <Route path="assets" element={<Assets />} />
+          <Route path="" element={<CustomerDetails />}>
+            <Route path=":customerId" element={<Customer />} />
+          </Route>
+          <Route path="assets" element={<Assets />}>
+            <Route path=":assetId" element={<Asset />} />
+          </Route>
           <Route path="reminders" element={<Reminders />} />
           <Route path="reports" element={<CustomerReports />} />
         </Route>
         <Route path="employees" element={<Employees />}>
-          <Route path="" element={<EmployeeDetails />} />
-          <Route path="details" element={<EmployeeDetails />} />
+          <Route path="" element={<EmployeeDetails />}>
+            <Route path=":employeeId" element={<Employee />} />
+          </Route>
           <Route path="development" element={<Development />} />
           <Route path="benefits" element={<Benefits />} />
           <Route path="communication" element={<Communication />} />
@@ -90,7 +104,6 @@ root.render(
           <Route path="reports" element={<Reports />} />
         </Route>
 
-        {/* TODO: I'm not sure this works yet:  */}
         <Route
           path="*"
           element={

@@ -1,9 +1,12 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import styled from 'styled-components';
+import Home from './Home.jsx';
 
 const Header = styled.header`
-  height: 100px;
+  height: 40px;
+  display: flex;
+  align-items: center;
 `
 
 const Tab = styled.button`
@@ -31,15 +34,11 @@ export default function Production() {
   return (
     <>
       <Header>
-        <Link to="/">
-          <button>Back</button>
-          <button>Settings</button>
-        </Link>
-        <h1>Production</h1>
-
+        <Home />
+        <span style={{ fontWeight: "bold", fontSize: "25px" }}>    Production</span>
       </Header>
       <nav>
-        <Link to="workorders">
+        <Link to="">
           <Tab style={{ borderLeft: "1px solid gray" }}>Work Orders</Tab>
         </Link>
         <Link to="workstations">

@@ -1,9 +1,12 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import styled from 'styled-components';
+import Home from './Home.jsx';
 
 const Header = styled.header`
-  height: 100px;
+  height: 40px;
+  display: flex;
+  align-items: center;
 `
 
 const Tab = styled.button`
@@ -31,14 +34,11 @@ export default function Customers() {
   return (
     <>
       <Header>
-        <Link to="/">
-          <button>Back</button>
-        </Link>
-        <h1>Customers</h1>
-        <button>Settings</button>
+        <Home />
+        <span style={{ fontWeight: "bold", fontSize: "25px" }}>    Customers</span>
       </Header>
       <nav>
-        <Link to="details">
+        <Link to="">
           <Tab style={{ borderLeft: "1px solid gray" }}>Customers</Tab>
         </Link>
         <Link to="assets">
@@ -52,7 +52,7 @@ export default function Customers() {
         </Link>
       </nav>
       <View>
-        <Outlet />
+        <Outlet/>
       </View>
     </>
   );

@@ -1,0 +1,9 @@
+name,created_date,status,department_id,cost,hours,last_maintenance,maintenance_cycle_months
+Workstation,'2020-03-25',true,1,2500,3652,'2020-03-25',24
+Workstation,'2020-03-25',true,1,2500,3845,'2022-03-25',24
+Soldering Station,'2020-06-20',true,3,4250,1483,'2020-06-20',24
+3D Printer - Small,'2020-06-22',true,4,12500,881,'2021-06-22',12
+3D Printer - Large,'2020-06-22',true,4,22000,643,'2021-06-22',12
+CNC Router,'2021-01-21',true,5,31250,1103,'2022-01-21',6
+Rotary Lathe,'2021-01-21',true,5,2500,334,'2021-01-21',24
+Paint Booth,'2020-03-30',true,7,1200,999,'2022-03-30',6
